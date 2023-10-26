@@ -13,9 +13,11 @@ export class ListSeriesPending extends Component {
   }
 
   getSeries(series: SeriesStructure[]) {
-    let listSeriesHTML = '';
-    for (const serie of series) {
-      listSeriesHTML += `
+    const listPending = series.filter((item) => item.watched === false);
+
+    let listSeriesPendingHTML = '';
+    for (const serie of listPending) {
+      listSeriesPendingHTML += `
     <li class="serie">
       <img class="serie__poster"
         src="${serie.poster}"
@@ -44,7 +46,7 @@ export class ListSeriesPending extends Component {
     `;
     }
 
-    return listSeriesHTML;
+    return listSeriesPendingHTML;
   }
 
   createTemplate() {
