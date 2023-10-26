@@ -46,8 +46,9 @@ img {
 }
 .series-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 2rem;
 }
 .serie {
   width: 24%;
